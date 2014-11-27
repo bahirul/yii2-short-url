@@ -27,9 +27,8 @@ class GoogleShortUrl extends Component
     public function expandUrl($shortUrl){
     	$expand_api_url = 'https://www.googleapis.com/urlshortener/v1/url?shortUrl='.$shortUrl;
     	$get_json = json_decode(file_get_contents($expand_api_url),TRUE);
-    	$json_response = $get_json['longUrl'];
 
-    	return $json_response;
+    	return  $get_json['longUrl'];
     }
 
 }
